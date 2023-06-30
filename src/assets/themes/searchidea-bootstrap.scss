@@ -1,0 +1,9 @@
+@import './colors.scss';
+
+// customized bootstrap for searchidea
+$primary: $im-secondary;
+$danger: $im-danger;
+$warning: $im-warn;
+$light: $im-background;
+
+@import '~bootstrap/scss/bootstrap';

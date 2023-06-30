@@ -1,0 +1,1 @@
+export { IMButtonNormal } from './IMButtonNormal';

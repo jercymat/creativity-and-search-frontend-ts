@@ -1,0 +1,19 @@
+@import '../../assets/styles/colors.scss';
+@import '../../assets/styles/effects.scss';
+@import '../../assets/styles/typography.scss';
+
+.wrap {
+  @extend .block-shadow;
+  @extend .block-corner;
+  width: calc(300px + 4rem);
+  background-color: $im-background;
+  padding: 2rem;
+
+  .fgroup {
+    margin-bottom: .75rem;
+
+    &:last-of-type {
+      margin-bottom: .5rem;
+    }
+  }
+}
