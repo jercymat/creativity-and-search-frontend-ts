@@ -6,6 +6,7 @@ interface GlobalState {
     show: boolean;
     message: string;
   },
+  searchMapperWidth: number,
 }
 
 const initialState: GlobalState = {
@@ -13,6 +14,7 @@ const initialState: GlobalState = {
     show: false,
     message: '',
   },
+  searchMapperWidth: 400,
 }
 
 const globalSlice = createSlice({
@@ -25,6 +27,9 @@ const globalSlice = createSlice({
     },
     closeErrorToast(state) {
       state.errorToast.show = false;
+    },
+    updateSearchMapperWidth(state, action: PayloadAction<number>) {
+      state.searchMapperWidth = action.payload;
     },
   }
 });

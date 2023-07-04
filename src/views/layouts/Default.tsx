@@ -1,9 +1,12 @@
 import React from 'react'
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import { IMNavBar } from '../../components/common/navigation';
-import { LandingPage } from '../pages';
+import { LandingPage, SERPPage } from '../pages';
+import { RootState } from '../../store';
+import { useSelector } from 'react-redux';
 
 export const DefaultLayout: React.FC = () => {
+  const { isLoggedIn } = useSelector((state: RootState) => state.auth);
 
   return (
     <>
@@ -15,8 +18,8 @@ export const DefaultLayout: React.FC = () => {
         }}>
         <Routes>
           <Route path='/' element={<LandingPage />} />
-          {/* <Route path='/search' element={isLoggedin ? <SERPPage /> : <Navigate replace to='/login' />} />
-          <Route path='/map' element={isLoggedin ? <IdeaMapperPage /> : <Navigate replace to='/login' />} /> */}
+          <Route path='/search' element={isLoggedIn ? <SERPPage /> : <Navigate replace to='/login' />} />
+          {/* <Route path='/map' element={isLoggedin ? <IdeaMapperPage /> : <Navigate replace to='/login' />} /> */}
         </Routes>
       </div>
     </>

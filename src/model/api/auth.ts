@@ -7,8 +7,8 @@ export interface AuthLoginAPIPayload extends BaseAPIPayload {
 
 export interface AuthLogoutAPIPayload extends BaseAPIPayload {}
 
-export interface AuthLoginResponse extends BaseAPIResponse {
+export interface AuthLoginAPIResponse extends BaseAPIResponse {
   usermsg: number,
 }
 
-export interface AuthLogoutResponse extends BaseAPIResponse {}
+export interface AuthLogoutAPIResponse extends BaseAPIResponse {}
