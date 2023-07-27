@@ -1,0 +1,54 @@
+@import "../../../assets/styles/effects.scss";
+@import "../../../assets/styles/typography.scss";
+@import "../../../assets/themes/colors.scss";
+
+.wrap {
+  @extend .block-shadow;
+  @extend .block-corner;
+  position: relative;
+  padding: 0.75rem 1rem 0.75rem 1rem;
+  background-color: $im-background;
+
+  &:focus {
+    outline: none;
+  }
+
+  .head {
+    margin-bottom: 0.25rem;
+
+    .title {
+      @extend .font-weight-medium;
+      font-size: $font-size-title2;
+      color: $im-primary;
+      margin-bottom: 0;
+    }
+
+    .url {
+      @extend .font-weight-medium;
+      color: $im-secondary;
+      margin-bottom: 0;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+  }
+
+  .desc {
+    @extend .font-weight-regular;
+    margin-bottom: 0;
+  }
+
+  .actions {
+    position: absolute;
+    top: 0.75rem;
+    right: 1rem;
+    visibility: hidden;
+
+    .action:not(:last-child) {
+      margin-right: 0.5rem;
+    }
+  }
+
+  &:hover .actions {
+    visibility: visible;
+  }
+}

@@ -1,9 +1,6 @@
-export interface SearchResult {
-  id: string;
-  title: string;
-  url: string;
-  description: string;
-}
+import { BaseResult } from "./common";
+
+export interface SearchResult extends BaseResult {}
 
 export interface Search {
   keyword: string;

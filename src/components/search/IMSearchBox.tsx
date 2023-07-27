@@ -3,18 +3,18 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./IMSearchBox.module.scss";
 import { Link } from "react-router-dom";
 
-type Props = {
+interface Props {
   id?: string;
   placeholder?: string;
   className?: string;
   style?: React.CSSProperties;
   defaultQuery?: string;
-};
+}
 
 export const IMSearchBox = (props: Props) => {
   const { id, placeholder, className, style, defaultQuery } = props;
   const [query, setQuery] = useState(
-    defaultQuery !== undefined ? defaultQuery : ""
+    defaultQuery != undefined ? defaultQuery : ""
   );
   const searchRef = useRef<HTMLAnchorElement>(null);
 
@@ -33,7 +33,7 @@ export const IMSearchBox = (props: Props) => {
         <input
           type="text"
           placeholder={
-            placeholder === undefined ? "Default Placeholder" : placeholder
+            placeholder == undefined ? "Default Placeholder" : placeholder
           }
           value={query}
           className={styles["search-input"]}
@@ -42,8 +42,8 @@ export const IMSearchBox = (props: Props) => {
         ></input>
         <div className={styles["search-button"]}>
           <Link
-            className={query === "" ? styles.disabled : undefined}
-            to={query !== "" ? `/search?q=${query.replace(" ", "+")}` : "#"}
+            className={query == "" ? styles.disabled : undefined}
+            to={query != "" ? `/search?q=${query.replace(" ", "+")}` : "#"}
             ref={searchRef}
           >
             <FontAwesomeIcon icon={["fas", "magnifying-glass"]} />

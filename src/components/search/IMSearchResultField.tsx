@@ -36,7 +36,7 @@ export const IMSearchResultField = (props: SearchResultFieldProps) => {
     if (currentSearchFetched) return;
 
     dispatch(searchActions.loadSearch({ keyword: queryParam, currentPage }));
-  });
+  }, [currentSearchFetched]);
 
   return (
     <div className={className}>

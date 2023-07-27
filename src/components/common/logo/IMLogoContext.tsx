@@ -1,14 +1,14 @@
-import React from 'react'
-import config from '../../../config';
-import { Fragment } from 'react';
+import React from "react";
+import config from "../../../config";
+import { Fragment } from "react";
 
-type Props = {
-  densed?: boolean,
+interface Props {
+  densed?: boolean;
 }
 
 const defaultProps: Props = {
   densed: false,
-}
+};
 
 function IMLogoContext(props: Props) {
   const { densed } = props;
@@ -17,16 +17,18 @@ function IMLogoContext(props: Props) {
     <Fragment>
       {!densed ? (
         <img
-          src='https://via.placeholder.com/60/023246/023246.jpg'
-          width='42'
-          height='42'
-          className='d-inline-block me-2'
-          style={{ borderRadius: '50%' }}
-          alt='Idea Map logo' />
+          src="https://via.placeholder.com/60/023246/023246.jpg"
+          width="42"
+          height="42"
+          className="d-inline-block me-2"
+          style={{ borderRadius: "50%" }}
+          alt="Idea Map logo"
+        />
       ) : null}
       <span
-        className={`font-logo-${densed ? 'densed' : 'main'}`}
-        style={densed ? { lineHeight: '1.2' } : undefined} >
+        className={`font-logo-${densed ? "densed" : "main"}`}
+        style={densed ? { lineHeight: "1.2" } : undefined}
+      >
         {config.PRODUCT_NAME}
       </span>
     </Fragment>

@@ -1,4 +1,4 @@
-import { BaseAPIPayload } from "../common";
+import { BaseAPIPayload, BaseAPIResponse } from "../common";
 import { SearchResult } from "../search";
 
 export interface SearchGetAPIPayload extends BaseAPIPayload {
@@ -7,8 +7,7 @@ export interface SearchGetAPIPayload extends BaseAPIPayload {
   offset: string;
 }
 
-export interface SearchGetAPIResponse {
-  ret: number;
+export interface SearchGetAPIResponse extends BaseAPIResponse {
   results: SearchResult[];
   totalResults: number;
 }

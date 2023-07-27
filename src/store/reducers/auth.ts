@@ -1,28 +1,28 @@
-import { PayloadAction, createSlice } from "@reduxjs/toolkit"
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 export interface LoginPayload {
-  name: string,
-  password: string,
+  name: string;
+  password: string;
 }
 
 export interface LoginSuccessPayload {
-  userName: string,
+  userName: string;
 }
 
 interface AuthState {
-  loading: boolean,
-  isLoggedIn: boolean,
-  userName: string,
+  loading: boolean;
+  isLoggedIn: boolean;
+  userName: string;
 }
 
 const initialState: AuthState = {
   loading: false,
-  isLoggedIn: localStorage.getItem('__im_username__') !== null,
-  userName: localStorage.getItem('__im_username__') ?? '',
-}
+  isLoggedIn: localStorage.getItem("__im_username__") != null,
+  userName: localStorage.getItem("__im_username__") ?? "",
+};
 
 const authSlice = createSlice({
-  name: 'auth',
+  name: "auth",
   initialState,
   reducers: {
     // defined payload but only used for sagas
@@ -41,7 +41,7 @@ const authSlice = createSlice({
     logoutSuccess(state) {
       state.loading = false;
       state.isLoggedIn = false;
-      state.userName = '';
+      state.userName = "";
     },
     // payload only used for error toasts
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -52,8 +52,8 @@ const authSlice = createSlice({
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     logoutFailure(state) {
       state.loading = false;
-    }
-  }
+    },
+  },
 });
 
 export const authActions = authSlice.actions;

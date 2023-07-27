@@ -1,0 +1,48 @@
+@import "../../../assets/styles/effects.scss";
+@import "../../../assets/styles/typography.scss";
+@import "../../../assets/themes/colors.scss";
+
+.wrap {
+  @extend .block-border;
+  @extend .parent-block-corner;
+  padding: 0.5rem;
+  background-color: $im-light;
+
+  .theme-title {
+    @extend .font-weight-medium;
+    line-height: 1.2;
+    font-size: $font-size-title2;
+    background-color: transparent;
+    color: $im-dark;
+    border: none;
+    padding: 0.25rem 0.5rem 0 0.5rem;
+    margin-bottom: 0.75rem;
+    box-shadow: none;
+  }
+
+  .results {
+    margin-bottom: 0.5rem;
+
+    & > div:not(:last-of-type) {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .note {
+    @extend .block-shadow;
+    @extend .block-corner;
+    border: none;
+    width: 100%;
+    text-align: start;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    background-color: $im-background;
+
+    span {
+      @extend .font-weight-medium;
+
+      &.placeholder {
+        color: $im-unaccent;
+      }
+    }
+  }
+}

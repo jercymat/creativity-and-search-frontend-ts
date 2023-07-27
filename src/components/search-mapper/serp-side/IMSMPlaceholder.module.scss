@@ -1,0 +1,15 @@
+@import "../../../assets/styles/colors.scss";
+@import "../../../assets/styles/effects.scss";
+@import "../../../assets/styles/typography.scss";
+
+.wrap {
+  @extend .block-shadow;
+  @extend .block-corner;
+  background-color: $im-background;
+  text-align: center;
+  padding: 0.75rem 1rem;
+
+  span {
+    @extend .font-placeholder;
+  }
+}

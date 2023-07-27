@@ -1,0 +1,58 @@
+@import "../../../assets/themes/colors.scss";
+@import "../../../assets/styles/typography.scss";
+@import "../../../assets/styles/effects.scss";
+
+.controls {
+  button {
+    @extend .block-corner;
+
+    width: 100%;
+    text-align: start;
+    padding: 0.75rem 1rem;
+    border: none;
+    background-color: $im-background;
+
+    &:not(:last-of-type):not(:nth-of-type(1)) {
+      margin-bottom: 0.5rem;
+    }
+
+    &.active {
+      background-color: $im-secondary;
+
+      .title {
+        color: white;
+      }
+
+      .sr_count {
+        color: white;
+      }
+    }
+
+    &:hover {
+      .title {
+        color: white;
+      }
+
+      .sr_count {
+        color: white;
+      }
+    }
+
+    .title {
+      @extend .font-weight-medium;
+      font-size: $font-size-title2;
+      color: $im-dark;
+      margin-bottom: 0;
+    }
+
+    .sr_count {
+      @extend .font-weight-medium;
+      color: $im-unaccent;
+      margin-bottom: 0;
+    }
+  }
+
+  input {
+    margin-top: 1rem;
+  }
+}

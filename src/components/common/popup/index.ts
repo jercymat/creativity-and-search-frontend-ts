@@ -1,1 +1,2 @@
-export { IMAlertToast } from './IMAlertToast';
+export { IMAlertToast } from "./IMAlertToast";
+export { TooltipHOC } from "./TooltipHOC";

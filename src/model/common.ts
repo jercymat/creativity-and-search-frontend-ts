@@ -1,11 +1,18 @@
 export interface BaseAPIPayload {
-  action: string,
+  action: string;
 }
 
 export interface BaseAPIResponse {
-  ret: number, 
+  ret: number;
 }
 
 export interface ErrorActionPayload {
-  error: string,
+  error: string;
+}
+
+export interface BaseResult {
+  id: string;
+  title: string;
+  url: string;
+  description: string;
 }

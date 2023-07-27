@@ -19,8 +19,8 @@ const IMSearchResultPaginator = (props: SearchResultPaginatorProps) => {
     let bottom = Math.max(currentPage - 2, 1);
     let top = Math.min(currentPage + 2, totalPages);
 
-    if (top === totalPages) bottom -= currentPage + 2 - totalPages;
-    if (bottom === 1) top += 1 - (currentPage - 2);
+    if (top == totalPages) bottom -= currentPage + 2 - totalPages;
+    if (bottom == 1) top += 1 - (currentPage - 2);
 
     return range(bottom, top + 1);
   }, [totalPages, currentPage]);
@@ -32,12 +32,12 @@ const IMSearchResultPaginator = (props: SearchResultPaginatorProps) => {
       <LinkContainer to={`${baseURL}&page=${currentPage - 1}`}>
         <Pagination.Prev
           onClick={handleScrollTop}
-          disabled={currentPage === 1}
+          disabled={currentPage == 1}
         />
       </LinkContainer>
       {getPaginationIndex().map((i) => (
         <LinkContainer to={`${baseURL}&page=${i}`} key={i}>
-          <Pagination.Item onClick={handleScrollTop} active={currentPage === i}>
+          <Pagination.Item onClick={handleScrollTop} active={currentPage == i}>
             {i}
           </Pagination.Item>
         </LinkContainer>
@@ -45,7 +45,7 @@ const IMSearchResultPaginator = (props: SearchResultPaginatorProps) => {
       <LinkContainer to={`${baseURL}&page=${currentPage + 1}`}>
         <Pagination.Next
           onClick={handleScrollTop}
-          disabled={currentPage === totalPages}
+          disabled={currentPage == totalPages}
         />
       </LinkContainer>
     </Pagination>
