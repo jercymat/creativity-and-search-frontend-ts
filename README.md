@@ -1,46 +1,71 @@
-# Getting Started with Create React App
+# Creativity and Search Project - Frontend (Typescript)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+\* This project is refactored based on [jercymat/creativity-and-search-frontend](https://github.com/jercymat/creativity-and-search-frontend) using Typescript, implementing strong type and replacing legacy Redux with Redux-toolkit for easier maintenance and lesser boilerplate code.
 
-## Available Scripts
+This project served as the Frontend web application of Creativity and Search Project hosted by Prof. Soo Young Rieh, School of Information, The University of Texas at Austin. The application is bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and developed with React, with various state management libraries like Redux and Redux-saga to build a scalable and robust web application.
 
-In the project directory, you can run:
+## Get Started
 
-### `npm start`
+### Prerequisites
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Node.js
+- NPM
+- Typescript
+- React
+- SASS
+- React-router-dom
+- Redux, React-redux, Redux-Saga
+- Axios
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Running the Service
 
-### `npm test`
+To start the service locally:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+npm install
+npm start
+```
 
-### `npm run build`
+It will run the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+## Documentation
+
+- Explore more information in [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- To learn React, check out the [React documentation](https://reactjs.org/).
+- Further documentation is available here.
+
+## Build
+
+Run the following code:
+
+```
+npm run build
+```
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
 The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+After the build, the app is ready to be deployed.
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Deployment
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+After the build, pack the `/build` folder and serve `index.html` with website hosting software like Nginx or Apache HTTP Server
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Static Server
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+For quick deployment, the easiest way to handle this would be to install [serve](https://github.com/vercel/serve) and let it handle the rest:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```
+npm install -g serve
+serve -s build
+```
 
-## Learn More
+The last command shown above will serve your static site on the port **3000**.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Other Solutions
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+For other deployment solutions, check [here](https://create-react-app.dev/docs/deployment/) for mre detail.
