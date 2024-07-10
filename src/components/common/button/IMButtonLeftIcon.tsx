@@ -1,10 +1,10 @@
 import React from "react";
-import { Button, Spinner } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import { ButtonVariant } from "react-bootstrap/esm/types";
 
-interface ButtonNormalProps {
-  bsVariant?: ButtonVariant;
-  loading?: boolean;
+interface ButtonLeftIconProps {
+  bsIcon: string;
+  bsVariant: ButtonVariant;
   disabled?: boolean;
   className?: string;
   form?: string;
@@ -13,17 +13,16 @@ interface ButtonNormalProps {
   children?: React.ReactNode;
 }
 
-const defaultProps: ButtonNormalProps = {
+const defaultProps: ButtonLeftIconProps = {
+  bsIcon: "chevron-left",
   bsVariant: "primary",
-  loading: false,
   className: "px-3",
-  disabled: false,
 };
 
-export const IMButtonNormal = (props: ButtonNormalProps) => {
+export const IMButtonLeftIcon = (props: ButtonLeftIconProps) => {
   const {
+    bsIcon,
     bsVariant,
-    loading,
     disabled,
     className,
     form,
@@ -37,23 +36,14 @@ export const IMButtonNormal = (props: ButtonNormalProps) => {
       className={className}
       variant={bsVariant}
       onClick={onClick}
-      disabled={disabled || loading}
+      disabled={disabled}
       form={form}
       type={type}
     >
-      {loading ? (
-        <Spinner
-          as="span"
-          animation="border"
-          size="sm"
-          role="status"
-          aria-hidden="true"
-        />
-      ) : (
-        children
-      )}
+      <i className={`fw-bold bi bi-${bsIcon}`}></i>
+      <span className="ms-2">{children}</span>
     </Button>
   );
 };
 
-IMButtonNormal.defaultProps = defaultProps;
+IMButtonLeftIcon.defaultProps = defaultProps;

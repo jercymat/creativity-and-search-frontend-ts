@@ -1,0 +1,1 @@
+export { IMCanvasConnection } from "./IMCanvasConnection";

@@ -1,4 +1,4 @@
-import { all, take, takeEvery } from "redux-saga/effects";
+import { all, takeEvery } from "redux-saga/effects";
 import { authActions } from "../reducers/auth";
 import { authLogin, authLogout } from "./auth";
 import { searchActions } from "../reducers/search";
@@ -14,6 +14,12 @@ import {
   smLoadSaga,
   smRenameThemeSaga,
 } from "./search-mapper";
+import { ideaMapperActions } from "../reducers/idea-mapper";
+import {
+  imLoadGraphSaga,
+  imLoadWholePageSaga,
+  imSaveGraphSaga,
+} from "./idea-mapper";
 
 export default function* rootSaga() {
   yield all([
@@ -33,5 +39,10 @@ export default function* rootSaga() {
     takeEvery(searchMapperActions.deleteTheme.type, smDeleteThemeSaga),
     takeEvery(searchMapperActions.renameTheme.type, smRenameThemeSaga),
     takeEvery(searchMapperActions.editThemeNote.type, smEditThemeNoteSaga),
+
+    // idea mapper
+    takeEvery(ideaMapperActions.loadWholePage.type, imLoadWholePageSaga),
+    takeEvery(ideaMapperActions.loadGraph.type, imLoadGraphSaga),
+    takeEvery(ideaMapperActions.saveGraph.type, imSaveGraphSaga),
   ]);
 }

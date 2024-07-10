@@ -136,10 +136,6 @@ const IMSMListSERP = () => {
     dispatch(searchMapperActions.loadResults());
   }, []);
 
-  useEffect(() => {
-    console.log(smThemes);
-  }, [smThemes]);
-
   return (
     <div className="d-grid gap-3">
       {smThemes.length == 1 && smThemes[0].searchResultList.length == 0 && (

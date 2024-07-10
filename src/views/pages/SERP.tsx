@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import styles from "./SERP.module.scss";
 import { useSearchParams } from "react-router-dom";
 import config from "../../config";
@@ -6,13 +6,15 @@ import { IMSearchResultField } from "../../components/search";
 import { LinkContainer } from "react-router-bootstrap";
 import IMSMListSERP from "../../components/search-mapper/IMSMListSERP";
 import { IMButtonRightIcon } from "../../components/common/button";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../store";
+import { globalActions } from "../../store/reducers/global";
 
 export const SERPPage = () => {
   const [searchParams] = useSearchParams();
+  const dispatch = useDispatch();
   const { smThemes } = useSelector((state: RootState) => state.searchMapper);
-  const searchMapperWrapperRef = useRef(null);
+  const searchMapperWrapperRef = useRef<HTMLDivElement>(null);
 
   const currentQuery = searchParams.get("q") ?? "";
   const currentPage = searchParams.has("page")
@@ -21,6 +23,14 @@ export const SERPPage = () => {
 
   // set page title
   document.title = `${currentQuery} - ${config.PRODUCT_NAME}`;
+
+  useEffect(() => {
+    dispatch(
+      globalActions.updateSearchMapperWidth(
+        searchMapperWrapperRef.current?.offsetWidth ?? 0
+      )
+    );
+  }, []);
 
   return (
     <div className={styles.wrap}>

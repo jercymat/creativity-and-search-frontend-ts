@@ -1,0 +1,1 @@
+export { IMCanvasEdge } from "./IMCanvasEdge";

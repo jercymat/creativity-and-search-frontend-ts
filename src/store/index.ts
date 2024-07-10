@@ -4,6 +4,7 @@ import rootSaga from "./sagas";
 import {
   AuthReducer,
   GlobalReducer,
+  IdeaMapperReducer,
   SearchMapperReducer,
   SearchReducer,
 } from "./reducers";
@@ -16,6 +17,7 @@ const store = configureStore({
     auth: AuthReducer,
     search: SearchReducer,
     searchMapper: SearchMapperReducer,
+    ideaMapper: IdeaMapperReducer,
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(saga),
 });

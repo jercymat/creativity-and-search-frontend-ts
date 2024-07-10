@@ -23,7 +23,6 @@ export function* searchGet(action: PayloadAction<LoadSearchPayload>) {
     const response: SearchGetAPIResponse = yield call(searchAPI.get, body);
 
     if (response.ret == 0) {
-      console.log(response);
       yield put(
         searchActions.loadSearchSuccess({
           keyword,

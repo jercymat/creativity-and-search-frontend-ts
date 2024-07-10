@@ -19,8 +19,6 @@ export function* smLoadSaga() {
     const response: SMLoadAPIResponse = yield call(searchMapperAPI.load);
 
     if (response.ret == 0) {
-      console.log(response);
-
       const smThemes = [response.relist[0]].concat(
         response.relist
           .slice(1)
@@ -50,8 +48,6 @@ export function* smAddSaga(action: PayloadAction<SearchResult>) {
     const response: SMAddAPIResponse = yield call(searchMapperAPI.add, body);
 
     if (response.ret == 0) {
-      console.log(response);
-
       yield all([
         put(searchMapperActions.addResultsSuccess()),
         put(searchMapperActions.loadResults()),
@@ -72,8 +68,6 @@ export function* smDeleteSaga(action: PayloadAction<number>) {
     );
 
     if (response.ret == 0) {
-      console.log(response);
-
       yield all([
         put(searchMapperActions.deleteResultsSuccess()),
         put(searchMapperActions.loadResults()),
@@ -96,8 +90,6 @@ export function* smCreateThemeSaga(
     );
 
     if (response.ret == 0) {
-      console.log(response);
-
       yield put(
         searchMapperActions.changeTheme({
           resultID: action.payload.firstResultID,
@@ -122,8 +114,6 @@ export function* smChangeThemeSaga(
     );
 
     if (response.ret == 0) {
-      console.log(response);
-
       yield all([
         put(searchMapperActions.changeThemeSuccess()),
         put(searchMapperActions.closeThemeDialog()),
@@ -145,8 +135,6 @@ export function* smDeleteThemeSaga(action: PayloadAction<number>) {
     );
 
     if (response.ret == 0) {
-      console.log(response);
-
       yield all([
         put(searchMapperActions.deleteThemeSuccess()),
         put(searchMapperActions.loadResults()),
@@ -169,8 +157,6 @@ export function* smRenameThemeSaga(
     );
 
     if (response.ret == 0) {
-      console.log(response);
-
       yield all([
         put(searchMapperActions.renameThemeSuccess()),
         put(searchMapperActions.closeTextDialog()),
@@ -198,8 +184,6 @@ export function* smEditThemeNoteSaga(
         : yield call(searchMapperAPI.editThemeNote, action.payload);
 
     if (response.ret == 0) {
-      console.log(response);
-
       yield all([
         put(searchMapperActions.editThemeNoteSuccess()),
         put(searchMapperActions.closeTextDialog()),

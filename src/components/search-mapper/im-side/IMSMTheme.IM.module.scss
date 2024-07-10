@@ -1,0 +1,58 @@
+@import "../../../assets/themes/colors.scss";
+@import "../../../assets/styles/typography.scss";
+@import "../../../assets/styles/effects.scss";
+
+.wrap {
+  @extend .block-border;
+  @extend .parent-block-corner;
+  position: relative;
+  padding: 0.5rem;
+  background-color: $im-light;
+
+  .theme-title {
+    @extend .font-weight-medium;
+    line-height: 1.2;
+    font-size: $font-size-title2;
+    background-color: transparent;
+    color: $im-dark;
+    border: none;
+    padding: 0.25rem 0.5rem 0 0.5rem;
+    margin-bottom: 0.75rem;
+    box-shadow: none;
+  }
+
+  .results {
+    margin-bottom: 0.5rem;
+
+    & > div:not(:last-of-type) {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .note {
+    @extend .block-shadow;
+    @extend .block-corner;
+    @extend .font-weight-medium;
+    border: none;
+    width: 100%;
+    text-align: start;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    background-color: $im-background;
+    transition: all 0.1s ease-in-out;
+
+    &.emptyNote {
+      color: $im-unaccent;
+    }
+  }
+
+  .actions {
+    position: absolute;
+    top: 0.4rem;
+    right: 0.5rem;
+    visibility: hidden;
+  }
+
+  &:hover .actions {
+    visibility: visible;
+  }
+}

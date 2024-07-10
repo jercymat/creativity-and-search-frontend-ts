@@ -1,6 +1,6 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { library } from '@fortawesome/fontawesome-svg-core';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faChevronRight,
   faChevronLeft,
@@ -13,27 +13,36 @@ import {
   faBars,
   faShareFromSquare,
   faPenToSquare,
-} from '@fortawesome/free-solid-svg-icons';
-import './assets/themes/searchidea-bootstrap.scss';
-import './index.scss';
-import config from './config';
-import reportWebVitals from './reportWebVitals';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import axios from 'axios';
-import { Container } from 'react-bootstrap';
-import { AccountLayout, DefaultLayout } from './views/layouts';
-import { Provider } from 'react-redux';
-import store from './store';
+} from "@fortawesome/free-solid-svg-icons";
+import "./assets/themes/searchidea-bootstrap.scss";
+import "reactflow/dist/style.css";
+import "./index.scss";
+import config from "./config";
+import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import axios from "axios";
+import { Container } from "react-bootstrap";
+import { AccountLayout, DefaultLayout } from "./views/layouts";
+import { Provider } from "react-redux";
+import store from "./store";
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
 
 // import fontawesome icons for global use
 library.add(
-  faChevronLeft, faChevronRight, faMagnifyingGlass, faTrashCan,
-  faFont, faLink, faPlus, faImage, faBars, faShareFromSquare,
-  faPenToSquare,
+  faChevronLeft,
+  faChevronRight,
+  faMagnifyingGlass,
+  faTrashCan,
+  faFont,
+  faLink,
+  faPlus,
+  faImage,
+  faBars,
+  faShareFromSquare,
+  faPenToSquare
 );
 
 // initial website title
@@ -47,8 +56,8 @@ root.render(
     <BrowserRouter>
       <Container fluid>
         <Routes>
-          <Route path='/login' element={<AccountLayout />} />
-          <Route path='/*' element={<DefaultLayout />} />
+          <Route path="/login" element={<AccountLayout />} />
+          <Route path="/*" element={<DefaultLayout />} />
         </Routes>
       </Container>
     </BrowserRouter>

@@ -14,3 +14,10 @@ export const range = (start: number, end?: number, step = 1) => {
   }
   return output;
 };
+
+/*
+  Make a string's first character uppercase
+*/
+export function titleCase(string: string) {
+  return string[0].toUpperCase() + string.slice(1).toLowerCase();
+}
